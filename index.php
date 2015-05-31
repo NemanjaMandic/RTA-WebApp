@@ -1,40 +1,33 @@
-<?php
- //set the timezone and generate two formatted date strings
-  date_default_timezone_set('US/Pacific');
-  $datetime = date('c');
-  $date_fmt = date('F d, Y');
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Realtime Web Apps</title>
-	<link rel="stylesheet" href="css/style.css">
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="js/script.js"></script>
+<meta charset="utf-8" />
+	<title>Realtime Q&amp;A</title>
+	
+<!-- Fonts -->
+<script type="text/javascript" src=""></script>	
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 <header>
-	<h1><em>Realtime Web App</em> &ndash; Vezba 1</h1>
-	<p>
-		Published on
-		<time datetime="<?php echo $datetime; ?>"><?php echo $date_fmt;?></time>.
-	</p>
+	<h1>Realtime Q&amp;A</h1>
+	<p class="tagline">A live feedback system for classes, presentation, and conferences</p>
 </header>
-<section>
-	<p>
-		19. Zahtijevamo besplatan servis u opštinama i ukidanje opštinskih i republičkih taksi pri ostvarivanju prava gradjana.
 
-	</p>
-	<p>
-		19. Zahtijevamo besplatan servis u opštinama i ukidanje opštinskih i republičkih taksi pri ostvarivanju prava gradjana.
-          the <code>&lt;section&gt;</code> and
-           <code>&lt;time&gt;</code> elements.
-	</p>
-</section>
 <footer>
-	<p>
-		All content &copy; 2012 Jason Lengstorf &amp; Phil Leggetter
-	</p>
+	<ul>
+		<li class="copyright">
+			&copy; 2015 Nemanja Mandic
+		</li>
+		<li>
+			Part of <em>Realtime Web Apps: HTML5 Websockets, Pusher, and the Web&rsquo;s Next Big Thing</em>
+		</li>
+		<li>
+			<a href="#">Get the Book</a>
+			<a href="#">Code (on Github)</a>
+		</li>
+	</ul>
 </footer>
 </body>
 </html>

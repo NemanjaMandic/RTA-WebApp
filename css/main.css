@@ -1,0 +1,122 @@
+@font-face{
+	font-family: Cooper;
+	src: url(fonts/Cooper Black.ttf);
+}
+@font-face{
+	font-family: Gothic;
+	src: url(fonts/News Gothic Std Bold.ttf);
+}
+
+/* Basic Font styles
+------------------------------------- */
+body{
+	font: 18px/24px Gothic;
+	color: #1f1b0c;
+	letter-spacing: .06em;
+}
+h1{
+	font-family: Cooper;
+	font-weight: normal;
+}
+h1{
+	margin: 0;
+	color: #fbf7e7;
+	font-size: 6em;
+	line-height: 1em;
+	letter-spacing: -.12em;
+}
+.tagline{
+	font-family: Gothic;
+	font-size: 1.1em;
+	line-height: 1em;
+	color: #fbf7e7;
+	letter-spacing: .12em;
+}
+a{
+	color: #e06f00;
+	text-decoration: none;
+}
+a:active, a:hover, a:focus{
+	text-decoration:underline;
+	outline:none;
+}
+footer li{
+	font-size: .75em;
+	line-height: 1em;
+	letter-spacing: .04em;
+	color:#fbf7e7;
+}
+footer li em{
+	font-style:normal;
+}
+
+/* Layout
+------------------------------------ */
+html{ background-color: #fbf7e7; }
+
+body { margin: 0; }
+
+header, footer{
+	-webkit-box-shadow: 0 0 10px rgba(31,27,12,.3);
+	box-shadow: 0 0 10px rgba(31,27,12,.3);
+}
+header,footer{
+	overflow:hidden;
+	background: #1f1b0c;
+	margin: 0;
+	padding: 1em;
+	text-align:center;
+}
+header{
+	margin-bottom: 3em;
+	padding: 3em 0 2em;
+}
+header h1, header p{
+	width: 960px;
+	margin: 0 auto;
+	padding:0;
+}
+header h1 { margin-bottom: .25em; }
+
+footer { margin-top: 6em; }
+
+footer ul {
+	width: 960px;
+	margin: 0 auto;
+	padding:0;
+}
+footer li{
+	float:right;
+	margin-left: 1em;
+	list-style: none;
+}
+footer li.copyright { float: left; margin-left: 0; }
+
+/* Media queries
+----------------------------------*/
+@media screen and(max-width: 960px){
+	header h1, header p { width: 760px; }
+
+	header { padding: .75em 0 1.2em; }
+
+	footer { margin-top: 4em; padding: 0; }
+
+	footer ul { width: 740px; }
+
+	footer li, footer li.copyright { float: none; margin: .75em 0; }
+}
+
+@media screen and (max-width: 768px){
+	
+	header h1, header p{
+		width: 90%;
+		min-width: 300px;
+	}
+	header { padding-bottom: .75em; }
+
+	header h1 { font-size: 2.4em; }
+
+	footer { margin-top: 3em; }
+
+	footer ul { width: 300px; }
+}
