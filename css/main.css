@@ -1,122 +1,305 @@
-@font-face{
-	font-family: Cooper;
-	src: url(fonts/Cooper Black.ttf);
+@font-face {
+    font-family: Cooper;
+    src: url(fonts/Cooper Black.ttf);
 }
-@font-face{
-	font-family: Gothic;
+
+@font-face {
+    font-family: Gothic;
 	src: url(fonts/News Gothic Std Bold.ttf);
 }
 
 /* Basic Font styles
 ------------------------------------- */
-body{
-	font: 18px/24px Gothic;
-	color: #1f1b0c;
-	letter-spacing: .06em;
+body {
+    font: 18px/24px Gothic;
+    color: #1f1b0c;
+    letter-spacing: .06em;
 }
-h1{
-	font-family: Cooper;
-	font-weight: normal;
+
+h1, h2 {
+    font-family: Cooper;
+    font-weight: normal;
 }
-h1{
-	margin: 0;
-	color: #fbf7e7;
-	font-size: 6em;
-	line-height: 1em;
-	letter-spacing: -.12em;
+
+h1 {
+    margin: 0;
+    color: #fbf7e7;
+    font-size: 6em;
+    line-height: 1em;
+    letter-spacing: -.12em;
 }
-.tagline{
-	font-family: Gothic;
-	font-size: 1.1em;
-	line-height: 1em;
-	color: #fbf7e7;
-	letter-spacing: .12em;
+
+h2 {
+    text-shadow: 0 0 10px rgba(31,27,12,.3);
 }
-a{
-	color: #e06f00;
-	text-decoration: none;
+
+h2 {
+    margin: 0 0 .5em;
+    font-size: 2.75em;
+    line-height: 1em;
+    letter-spacing: -.08em;
 }
-a:active, a:hover, a:focus{
-	text-decoration:underline;
-	outline:none;
+
+p {
+    text-align: center;
 }
-footer li{
-	font-size: .75em;
-	line-height: 1em;
-	letter-spacing: .04em;
-	color:#fbf7e7;
+
+form p {
+    margin: 0 0 1em;
+    padding: 0;
+    font-size: 1.375em;
 }
-footer li em{
-	font-style:normal;
+
+label {
+    font-family: Gothic;
+    font-size: .75em;
+    line-height: 1.25em;
+    letter-spacing: .04em;
+}
+
+input {
+    font-family: Cooper;
+    color: #fbf7e7;
+    background-color: #1f1b0c;
+    border-radius: 6px;
+    border: none;
+    font-size: 1.75em;
+    line-height: 1em;
+    letter-spacing: -.08em;
+    text-shadow: 0 0 10px rgba(31, 27, 12, .3);
+}
+
+label input {
+    font-family: Gothic;
+    font-size: 1.75em;
+    letter-spacing: .08em;
+    color: #1f1b0c;
+    background-color: #fff;
+}
+
+.tagline {
+    font-family: Gothic;
+    font-size: 1.1em;
+    line-height: 1em;
+    color: #fbf7e7;
+    letter-spacing: .12em;
+}
+
+a {
+    color: #e06f00;
+    text-decoration: none;
+}
+
+a:active, a:hover, a:focus {
+    text-decoration: underline;
+    outline: none;
+}
+
+footer li {
+    font-size: .75em;
+    line-height: 1em;
+    letter-spacing: .04em;
+    color: #fbf7e7;
+}
+
+footer li em {
+    font-style: normal;
 }
 
 /* Layout
 ------------------------------------ */
-html{ background-color: #fbf7e7; }
+html {
+    background-color: #fbf7e7;
+}
 
-body { margin: 0; }
+body {
+    margin: 0;
+}
 
-header, footer{
-	-webkit-box-shadow: 0 0 10px rgba(31,27,12,.3);
-	box-shadow: 0 0 10px rgba(31,27,12,.3);
+header, footer {
+    -webkit-box-shadow: 0 0 10px rgba(31,27,12,.3);
+    box-shadow: 0 0 10px rgba(31,27,12,.3);
 }
-header,footer{
-	overflow:hidden;
-	background: #1f1b0c;
-	margin: 0;
-	padding: 1em;
-	text-align:center;
-}
-header{
-	margin-bottom: 3em;
-	padding: 3em 0 2em;
-}
-header h1, header p{
-	width: 960px;
-	margin: 0 auto;
-	padding:0;
-}
-header h1 { margin-bottom: .25em; }
 
-footer { margin-top: 6em; }
+header,footer {
+    overflow: hidden;
+    background: #1f1b0c;
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 3em;
+    padding: 3em 0 2em;
+}
+
+header h1, header p {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header h1 {
+    margin-bottom: .25em;
+}
+
+section {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+form {
+    float: left;
+    width: 473px;
+    text-align: center;
+}
+
+form#attending {
+    float: right;
+}
+
+form#presenting {
+ /* float: left; */ /* position: relative; */ /* top: 0px; */ /* left: 0px; */ /* bottom: 292px; */;
+}
+
+label {
+    display: block;
+    width: 430px;
+    margin: 0 auto 1em;
+    text-indent: 2px;
+    text-align: left;
+}
+
+input {
+    margin: .25em 0 0;
+    padding: .375em .875em;
+}
+
+label input {
+    display: block;
+    width: 400px;
+    margin: 0;
+    padding: .375em 15px;
+    border: 2px solid #1f1b0c;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: inset 2px 2px 14px rgba(31,27,12,.3);
+    box-shadow: inset 2px 2px 14px rgba(31,27,12,.3);
+}
+
+footer {
+    margin-top: 6em;
+}
 
 footer ul {
-	width: 960px;
-	margin: 0 auto;
-	padding:0;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
 }
-footer li{
-	float:right;
-	margin-left: 1em;
-	list-style: none;
-}
-footer li.copyright { float: left; margin-left: 0; }
 
+footer li {
+    float: right;
+    margin-left: 1em;
+    list-style: none;
+}
+
+footer li.copyright {
+    float: left;
+    margin-left: 0;
+}
+
+/* Highlights
+--------------------------------------- */
+input:active, input:hover, input:focus {
+    background-color: #e06f00;
+    outline: none;
+}
+
+input::-moz-focus-inner {
+    border: 0;
+}
+
+label input:active, label input:focus {
+	border-color: #e06f00;
+	background-color: #fff;
+	outline: none;
+}
+label input:hover { background-color: #fff;}
 /* Media queries
 ----------------------------------*/
-@media screen and(max-width: 960px){
-	header h1, header p { width: 760px; }
+@media screen and(max-width: 960px) {
+    header h1, header p {
+        width: 760px;
+    }
 
-	header { padding: .75em 0 1.2em; }
+    header {
+        padding: .75em 0 1.2em;
+    }
 
-	footer { margin-top: 4em; padding: 0; }
+    section { width: 740px; }
 
-	footer ul { width: 740px; }
+    p { margin: 0 0 2em; padding: 0; }
 
-	footer li, footer li.copyright { float: none; margin: .75em 0; }
+    header>p, section>p { font-size: .875em; }
+
+    form { width: 340px; padding: 0 8px; }
+
+    form p { font-size: 1em; }
+
+    label { width: 100%; }
+
+    input { font-size: 1.5em; }
+
+    label input { width: 91%; }
+
+    footer {
+        margin-top: 4em;
+        padding: 0;
+    }
+
+    footer ul {
+        width: 740px;
+    }
+
+    footer li, footer li.copyright {
+        float: none;
+        margin: .75em 0;
+    };
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
 	
-	header h1, header p{
-		width: 90%;
-		min-width: 300px;
-	}
-	header { padding-bottom: .75em; }
+    header h1, header p, section {
+        width: 90%;
+        min-width: 300px;
+    }
 
-	header h1 { font-size: 2.4em; }
+    header {
+        padding-bottom: .75em;
+    }
 
-	footer { margin-top: 3em; }
+    header h1 {
+        font-size: 2.4em;
+    }
+    
+    form, form#attending {
+    	float: none;
+    	width: 90%;
+    	margin: 0 auto 3em;
+    }
 
-	footer ul { width: 300px; }
+    form p {
+    	font-size: .75em;
+    }
+
+    label input { width: 88%; font-size: 1.6em; }
+    footer {
+        margin-top: 3em;
+    }
+
+    footer ul {
+        width: 300px;
+    }
 }
