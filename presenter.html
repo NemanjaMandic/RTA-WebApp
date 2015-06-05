@@ -16,25 +16,30 @@
 	<header>
 		<h2>Realtime Web Apps &amp; the Mobile Internet</h2>
 		<p>Presented by Jason Lengstorf</p>
+
+		<form id="close-this-room">
+		<label> Link to your room.
+			<input type="text" name="room-url" value="http://realtime.local/room/1234" disabled>
+			</label>
+			<input type="submit" value="Close This Room">
+		</form>
 	</header>
 
-	<h3>This session has ended.</h3>
-     <p>
-     	If you have a question that wasn't answered, please
-     	<a href="mailto:mail@gmail.com">email the presenter</a>
-     </p>
-	<ul id="questions" class="closed">
+	
+	<ul id="questions" class="presenter">
 		<li id="question-1" data-count="27">
-			<p>What is the best way to implement realtime features today?</p>
-			<form class="vote">
-				<input value="I also have this question" type="submit">
+		
+			<form class="answer">
+				<input value="Answer this question" type="submit">
 			</form>
+				<p>What is the best way to implement realtime features today?</p>
 		</li><!--END question-1 -->
 		<li id="question-2" data-count="14">
-			<p>Does this work on browsers that don't support the WebSockets API?</p>
-			<form class="vote">
-				<input value="I also have this question" type="submit">
+			
+			<form class="answer">
+				<input value="Answer this question" type="submit">
 			</form>
+			<p>Does this work on browsers that don't support the WebSockets API?</p>
 		</li><!--END question-2 -->
 	</ul>
 </section>

@@ -322,7 +322,7 @@ section header {
   text-align: left; 
   }
 
-#questions .vote {     
+#questions .vote, #questions .answer {     
   position: relative;     
   display: block;     
   width: 76px;     
@@ -332,9 +332,12 @@ section header {
   overflow: hidden; 
 }
 
-#questions .vote input[type="submit"]{
-  margin: 0px;
-  padding-right: 104px;
+#questions .vote input[type="submit"],
+#questions .answer input[type="submit"]{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   height: 100%;
   cursor: pointer;
   text-indent: -9999px;
@@ -343,6 +346,26 @@ section header {
           box-shadow: none;
 }
 
+/* new rules */
+
+#questions .answer {
+  float: right;
+  width: 78px;
+  height: 88px;
+  margin: 0;
+}
+
+#questions .answer input[type="submit"] { background-position: right top; }
+
+#questions .answer input:active,
+#questions .answer input:hover,
+#questions .answer input:focus {
+  background-position: right bottom;
+}
+
+#close-this-room { width: 340px; margin: 2em 0 0; }
+
+#close-this-room label input { width: 305px; }
 #questions .vote input:active,
 #questions .vote input:hover,
 #questions .vote input:focus {
@@ -380,12 +403,21 @@ section header {
     }
 
     
-    section header {
+    section header, #close-this-room {
       float: none;
       width: 680px;
       margin: 0 auto 1.5em;
       overflow: hidden;
     }
+
+    #close-this-room { margin: 1em auto 0; }
+
+    #close-this-room label { width: 59%; float: left; }
+
+    #close-this-room label input { width: 88%; margin: 0; }
+
+    #close-this-room input { float: left; margin: .6em 0 0; }
+
     p { margin: 0 0 2em; padding: 0; }
 
     header>p, section>p { font-size: .875em; }
@@ -432,6 +464,29 @@ section header {
 
 @media screen and (max-width: 768px) {
 	
+	form, form#attending, form#ask-a-question, #close-this-room {
+	  float: none;
+	  width: 90%;
+	  margin: 0 auto 3em;
+	}
+
+	#ask-a-question label, #close-this-room label { width: 270px; }
+
+	#ask-a-question input, #close-this-room input {
+	  float: none;
+	  margin: 0 auto;
+	}
+
+ /* New close rules */
+ #close-this-room { margin: 1em auto 0; }
+
+ #questions.presenter li:before {
+   top: auto;
+   right: 24px;
+   bottom: 6px;
+   left: auto;
+   z-index: 10;
+ }
     header h1, header p, section {
         width: 90%;
         min-width: 300px;
