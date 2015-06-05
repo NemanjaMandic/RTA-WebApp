@@ -16,9 +16,18 @@ body {
     letter-spacing: .06em;
 }
 
-h1, h2, #questions li:before {
+h1, h2,h3 #questions li:before {
     font-family: Cooper;
     font-weight: normal;
+}
+h2, h3 { text-shadow: 0 0 10px rgba(31, 27, 12, .3); }
+
+h3 {
+  margin: 0 365px .75em 0;
+  font-size: 1.875em;
+  line-height: 1em;
+  letter-spacing: -.08em;
+  text-align: center;
 }
 
 h1 {
@@ -42,6 +51,8 @@ h2 {
 
 p {
     text-align: center;
+    margin: 0 365px 2em 0;
+    padding: 0 6em;
 }
 
 form p {
@@ -344,6 +355,17 @@ section header {
   left: 0;
   top: 50%;
   margin-top: -.5em;
+}
+
+#questions.closed { opacity: .4; }
+
+#questions.closed .vote { opacity: .2; }
+
+#questions.closed .vote input:active,
+#questions.closed .vote input:hover,
+#questions.closed .vote input:focus {
+  background-position: left top;
+  cursor: default;
 }
 /* Media queries
 ----------------------------------*/
