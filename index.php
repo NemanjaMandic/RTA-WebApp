@@ -8,7 +8,12 @@
 
 define('APP_PATH', dirname(__FILE__));
 
-//App folder, relative from web root (i.e http://example.org/realtime/)
+
+//App folder, relative from web root (i.e /realtime)
+
+define('APP_FOLDER', dirname($_SERVER['SCRIPT_NAME']));
+
+//URI path to the app (i.e http://example.org/realtime/)
 
 define(
 	'APP_URI', 
@@ -49,6 +54,48 @@ if(DEBUG === TRUE){
 //sets the timezone to avoid a notice
 
 date_default_timezone_set(APP_TIMEZONE);
+
+//Register class_loader() as the autoload function
+
+spl_autoload_register('class_autoloader');
+
+//------------------------------------------------
+//Loads and proxesses view data
+//------------------------------------------------
+
+------------------------------  175 strana -------------------------------------
+//Parses the URI
+
+ $uri_array  = parse_uri();
+ $class_name = get_controller_classname($uri_array);
+ $options = $uri_array;
+
+ //Sets a default view if nothing is passed in the URI (i.e on the home page)
+
+ if(empty($class_name)){
+ 	$class_name = 'Home';
+ }
+
+ //Tries to initialize the requested view, or else throws a 404 error
+
+ try{
+ 	$controller = new $class_name($options);
+ }catch(Exception $e){
+ 	$options[1] = $e->getMessage();
+ 	$controller = new Error($options);
+ }
+
+//------------------------------------
+ //Outputs the view
+ //-----------------------------------
+
+ //Includes the header, requested view, and footer markup
+
+ require_once SYS_PATH . '/inc/header.inc.php';
+
+ $controller->output_view();
+
+ require_once SYS_PATH . '/inc/footer.inc.php';
 
 //------------------------------------
 //Function declarations
@@ -100,4 +147,34 @@ function get_controller_classname( &$uri_array){
 
  function remove_unwanted_slashes($dirty_path){
  	return preg_replace('~(?<!:)//~', '/', $dirty_path);
+ }
+
+ /**  
+ * Autoloads classes as they are instantiated 
+  *  
+  * @param $class_name string    The name of the class to be loaded 
+   * @return bool                 Returns TRUE on success (Exception on failure)  
+   */
+
+ function class_autoloader($class_name){
+ 	$fname = strtolower($class_name);
+
+ 	//Defines all of the valid places a class file could be stored
+
+ 	$possible_locations = array(
+         SYS_PATH . '/models/class.' . $fname . '.inc.php',
+         SYS_PATH . '/controllers/class.' . $fname . '.inc.php',
+         SYS_PATH . '/core/class.' .$fname . '.inc.php',
+ 		);
+
+ 	//Loops through the location array and checks for a file to load
+ 	foreach ($possible_locations as $loc) {
+ 		if(file_exists($loc)){
+ 			require_once $loc;
+ 			return TRUE;
+ 		}
+ 	}
+ 	//Fails because a valid class wasn't found
+ 	throw new Exception("Class $class_name wasnt found");
+ 	
  }
