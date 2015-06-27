@@ -23,7 +23,7 @@ $_C['DB_PASS'] = '';
 //Enable debug mode (strict error reporting)
 //-------------------------------------------
 
-$_C['DEBUG'] = TRUE:
+$_C['DEBUG'] = TRUE;
 
 //-----------------------------------------------------
 //Convert the constants array into actual constants

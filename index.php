@@ -44,10 +44,10 @@ require_once SYS_PATH . '/config/config.inc.php';
 //Turns on error reporting if in debug mode
 
 if(DEBUG === TRUE){
-	init_set('display_errors', 1);
+	//init_set('display_errors', 1);
 	error_reporting(E_ALL^E_STRICT);
 }else{
-	init_set('display_errors', 0);
+	//init_set('display_errors', 0);
 	error_reporting(0);
 }
 
@@ -63,7 +63,7 @@ spl_autoload_register('class_autoloader');
 //Loads and proxesses view data
 //------------------------------------------------
 
-------------------------------  175 strana -------------------------------------
+
 //Parses the URI
 
  $uri_array  = parse_uri();
@@ -88,6 +88,15 @@ spl_autoload_register('class_autoloader');
 //------------------------------------
  //Outputs the view
  //-----------------------------------
+
+// Loads the <title> tag value for the header markup
+
+ $title = $controller->get_title();
+
+ //Sets the path to the app stylesheet for the header markup
+
+ $dirty_path = APP_URI . '/assets/css/main.css';
+ $css_path = remove_unwanted_slashes($dirty_path);
 
  //Includes the header, requested view, and footer markup
 

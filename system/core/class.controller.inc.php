@@ -29,8 +29,15 @@ abstract class Controller{
 	*/
 
 	protected function generate_nonce(){
+
+		//Checks for an existing nonce before creating a new one
+
+		if(empty(self::$nonce)){
+			self::$nonce = base64_encode(uniqid(NULL, TRUE));
+			$_SESSION['nonce'] = self::$nonce;
+		}
 		//TODO: Add the actual nonce generation script
-		return "tempnonce";
+		return self::$nonce;
 	}
 
 	/**      

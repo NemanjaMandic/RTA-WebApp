@@ -462,6 +462,13 @@ section header {
     };
 }
 
+
+/*
+Error Styling
+------------------------------------ */
+
+section#error { text-align: center; }
+section#error p { margin: 0 auto 2em; }
 @media screen and (max-width: 768px) {
 	
 	form, form#attending, form#ask-a-question, #close-this-room {
